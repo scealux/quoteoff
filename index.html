@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUOTEOFF</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Vote for the best quotes!">
+</head>
+
+<body>
+
+    <header>
+        <h1>QUOTEOFF</h1>
+        <nav>
+            <button id="nav-vote" class="active">Vote</button>
+            <button id="nav-leaderboard">Leaderboard</button>
+            <button id="nav-about">About</button>
+        </nav>
+    </header>
+
+    <main id="app-container">
+
+        <!-- VOTE TAB -->
+        <section id="tab-vote" class="tab-content active">
+            <div id="loading-message">Loading quotes...</div>
+            <div id="voting-area" class="hidden">
+                <div class="card" id="card-left">
+                    <p class="quote-text"></p>
+                </div>
+                <div class="vs-divider">VS</div>
+                <div class="card" id="card-right">
+                    <p class="quote-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERBOARD TAB -->
+        <section id="tab-leaderboard" class="tab-content hidden">
+            <h2>Top 10 Quotes</h2>
+            <div id="leaderboard-loading">Loading...</div>
+            <ol id="leaderboard-list">
+                <!-- List items will be injected here -->
+            </ol>
+        </section>
+
+        <!-- ABOUT TAB -->
+        <section id="tab-about" class="tab-content hidden">
+            <h2>About QuoteOff</h2>
+            <p> I love the way people talk. Most of my humor is repeating back things people say to emphasize how strage
+                it sounded.</p>
+            <p>This year, I actually started writing down the random out-of-context quotes I heard.</p>
+            <p>Now it's time to vote for the best!</p>
+            <p> Quote authors are kept anonymous to prevent bias.</p>
+        </section>
+
+    </main>
+    <!-- Firebase SDKs (Modular) -->
+    <script type="module" src="app.js"></script>
+
+</body>
+
+</html>

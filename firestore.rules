@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /quotes/{quoteId} {
+      // Allow anyone to read quotes
+      allow read: if true;
+
+      // Allow updates to 'rating' and 'voteCount'
+      // Security:
+      // 1. Only 'rating' and 'voteCount' can change.
+      // 2. Rating change must be within K-factor (32) to prevent massive boosting.
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['rating', 'voteCount'])
+                    && request.resource.data.rating is number
+                    && math.abs(request.resource.data.rating - resource.data.rating) <= 32;
+
+      // Deny create/delete via client (admin only)
+      allow create, delete: if false;
+    }
+  }
+}
