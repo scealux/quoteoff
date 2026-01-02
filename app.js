@@ -88,8 +88,7 @@ tabs.about.addEventListener('click', () => switchTab('about'));
 
 /**
  * Fetch a random quote.
- * Uses a random integer ID strategy assuming approx 250 quotes.
- * Logic: Generate random ID (1-250), query where 'id' == randomID.
+ * Logic: Generate random ID (1-275), query where 'id' == randomID.
  * If conflict/missing, retry (simple recursion).
  */
 async function fetchRandomQuote(excludeId = null) {
@@ -97,9 +96,9 @@ async function fetchRandomQuote(excludeId = null) {
     let retries = 0;
 
     while (retries < maxRetries) {
-        // Assume IDs are approx 1 to 300 based on upload count (275).
+        // Assume IDs are approx 1 to 275 based on upload count (275).
         // You might want to store a metadata doc with total count if strict accuracy is needed.
-        const randomId = Math.floor(Math.random() * 300) + 1;
+        const randomId = Math.floor(Math.random() * 275) + 1;
 
         if (excludeId && randomId === excludeId) continue;
 
@@ -122,7 +121,6 @@ async function fetchRandomQuote(excludeId = null) {
     }
 
     // Fallback if ID lookup fails repeatedly (e.g. gaps in IDs)
-    // In production, better to use a dedicated 'random' field query or array of IDs.
     // For now, returning a placeholder or simplified fallback is safer than infinite loop.
     return null;
 }
