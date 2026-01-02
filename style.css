@@ -6,9 +6,10 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace; /* Web 1.0 vibe */
-    background-color: #ffffff;
-    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    /* Web 1.0 vibe */
+    background-color: #000000;
+    color: #ffffff;
     line-height: 1.6;
     padding: 20px;
     max-width: 900px;
@@ -17,17 +18,19 @@ body {
 
 /* Header & Nav */
 header {
-    margin-bottom: 40px;
-    border-bottom: 2px solid #000;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffffff;
     padding-bottom: 20px;
     text-align: center;
 }
 
 h1 {
+    font-family: 'Climate Crisis', cursive;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     letter-spacing: -2px;
     text-transform: uppercase;
+    font-variation-settings: 'YEAR' 1979;
 }
 
 nav {
@@ -39,27 +42,39 @@ nav {
 nav button {
     background: none;
     border: 2px solid transparent;
-    font-family: inherit;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
     padding: 5px 15px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     transition: all 0.2s;
+    color: #ffffff;
 }
 
-nav button:hover {
-    text-decoration: underline;
+@media (hover: hover) {
+    nav button:hover {
+        text-decoration: underline;
+    }
 }
 
 nav button.active {
-    border: 2px solid #000;
-    background-color: #000;
-    color: #fff;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     text-decoration: none;
 }
 
 /* Tab Logic */
+.vote-instruction {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
 .tab-content {
     display: none;
     animation: fadeIn 0.3s ease;
@@ -70,14 +85,20 @@ nav button.active {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Voting Area */
 #voting-area {
     display: flex;
-    align-items: stretch; /* Cards same height */
+    align-items: stretch;
+    /* Cards same height */
     justify-content: space-between;
     gap: 20px;
     min-height: 300px;
@@ -85,54 +106,64 @@ nav button.active {
 
 .card {
     flex: 1;
-    border: 2px solid #000;
+    border: 2px solid #ffffff;
     padding: 30px;
-    background-color: #fff;
+    background-color: #000000;
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.1s, box-shadow 0.1s;
-    user-select: none; /* Prevent text selection on rapid clicks */
+    user-select: none;
+    /* Prevent text selection on rapid clicks */
+    border-radius: 15px;
 }
 
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 4px 4px 0px #000;
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 4px 4px 0px #ffffff;
+    }
 }
 
 .card:active {
     transform: translateY(1px);
-    box-shadow: 2px 2px 0px #000;
+    box-shadow: 2px 2px 0px #ffffff;
 }
 
 .quote-text {
-    font-size: 1.2rem;
-    font-weight: bold;
-    white-space: pre-line; /* Essential for poetry/dialogue */
+    font-family: 'Kirang Haerang', cursive;
+    font-size: 2rem;
+    /* Increased size for this specific font */
+    font-weight: 400;
+    white-space: pre-line;
+    /* Essential for poetry/dialogue */
     text-align: center;
+    line-height: 1.1;
 }
 
 /* Separation */
 .vs-divider {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 900;
     padding: 0 10px;
 }
 
 /* Voting Animations */
 .card.winner {
-    background-color: #ccffcc; /* Pastel Green */
-    border-color: #006600;
-    color: #006600;
+    background-color: #1a331a;
+    /* Darker Green for dark mode */
+    border-color: #4dff4d;
+    color: #4dff4d;
 }
 
 .card.loser {
     opacity: 0.4;
-    background-color: #f0f0f0;
+    background-color: #1a1a1a;
 }
 
 /* Leaderboard */
@@ -143,12 +174,21 @@ nav button.active {
 
 #leaderboard-list li {
     padding: 15px;
-    border-bottom: 1px solid #ddd;
-    font-size: 1.1rem;
+    border-bottom: 1px solid #333;
+    font-size: 1.5rem;
+    font-family: 'Climate Crisis', cursive;
+    /* Numbers will take this font */
+}
+
+#leaderboard-list li span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    margin-left: 15px;
+    /* Quotes will take this font */
 }
 
 #leaderboard-list li:nth-child(even) {
-    background-color: #fafafa;
+    background-color: #111;
 }
 
 .leaderboard-rating {
@@ -180,4 +220,8 @@ nav button.active {
     .card {
         min-height: 200px;
     }
+}
+
+a {
+    color: #ffffff;
 }

@@ -291,12 +291,7 @@ function renderLeaderboard(data) {
         const textSpan = document.createElement('span');
         textSpan.textContent = item.displayText;
 
-        const scoreSpan = document.createElement('span');
-        scoreSpan.className = 'leaderboard-rating';
-        scoreSpan.textContent = `(${item.rating || 1000})`;
-
         li.appendChild(textSpan);
-        li.appendChild(scoreSpan);
         leaderboardArea.list.appendChild(li);
     });
 }

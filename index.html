@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QUOTEOFF</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/favicons/site.webmanifest">
+
     <meta name="description" content="Vote for the best quotes!">
 </head>
 
@@ -14,9 +26,9 @@
     <header>
         <h1>QUOTEOFF</h1>
         <nav>
-            <button id="nav-vote" class="active">Vote</button>
-            <button id="nav-leaderboard">Leaderboard</button>
-            <button id="nav-about">About</button>
+            <button id="nav-vote" class="active">vote</button>
+            <button id="nav-leaderboard">leaderboard</button>
+            <button id="nav-about">about</button>
         </nav>
     </header>
 
@@ -24,7 +36,8 @@
 
         <!-- VOTE TAB -->
         <section id="tab-vote" class="tab-content active">
-            <div id="loading-message">Loading quotes...</div>
+            <p class="vote-instruction">choose the better out-of-context quote</p>
+            <div id="loading-message">loading quotes...</div>
             <div id="voting-area" class="hidden">
                 <div class="card" id="card-left">
                     <p class="quote-text"></p>
@@ -38,8 +51,8 @@
 
         <!-- LEADERBOARD TAB -->
         <section id="tab-leaderboard" class="tab-content hidden">
-            <h2>Top 10 Quotes</h2>
-            <div id="leaderboard-loading">Loading...</div>
+            <h2>current top 10 quotes</h2>
+            <div id="leaderboard-loading">loading...</div>
             <ol id="leaderboard-list">
                 <!-- List items will be injected here -->
             </ol>
@@ -47,12 +60,13 @@
 
         <!-- ABOUT TAB -->
         <section id="tab-about" class="tab-content hidden">
-            <h2>About QuoteOff</h2>
-            <p> I love the way people talk. Most of my humor is repeating back things people say to emphasize how strage
-                it sounded.</p>
+            <h2>about quoteoff</h2>
+            <p> I love the way people talk. Most of my humor is repeating back things people say to emphasize how
+                strange it sounded.</p>
             <p>This year, I actually started writing down the random out-of-context quotes I heard.</p>
             <p>Now it's time to vote for the best!</p>
-            <p> Quote authors are kept anonymous to prevent bias.</p>
+            <p> Quote authors are anonymous so you vote for the quote!</p>
+            <p> ( more projects at <a href="https://alexfiel.com">alexfiel.com</a> ) </p>
         </section>
 
     </main>
